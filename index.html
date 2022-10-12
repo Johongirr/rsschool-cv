@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rsschool-cv-html</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="container-centered">
+    <!-- header -->
+    <header>
+      <div class="left-side"><img class="portrait" src="./images/me.jpg" alt="Portrait" width="204" height="204" >
+      </div>
+      <div class="right-side">
+        <nav class="nav-bar">
+          <ul class="nav-list">
+            <li><a href="#contacts">Contacts</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#languages">Languages</a></li>
+            <li><a href="#about-myself">About me</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#code-example">Code</a></li>
+          </ul>
+        </nav>
+        <h1>Rahimov Jaxongirmirzo</h1>
+        <h2>Full-Stack Developer</h2>
+      </div>
+    </header>
+    <div class="flex">
+      <!-- left side -->
+      <div class="left-side">
+        <!-- main -->
+        <main>
+          <section class="contacts" id="contacts">
+            <h3>Contacts</h3>
+            <ul>
+              <li>
+                <img src="./images/icons/phone.svg" alt="Phone Icon" width="30" height="30" >
+                <p>+99891-350-03-21</p>
+              </li>
+              <li class="flex">
+                <img src="./images/icons/email.svg" alt="Email Icon" width="30" height="30" >
+                <p>rjohongirmirzohon@gmail.com</p>
+              </li>
+              <li>
+                <img src="./images/icons/telegram.svg" alt="Telegram Icon" width="30" height="30" >
+                <p>@fullstack_developerrr</p>
+              </li>
+            </ul>
+          </section>
+          <section class="skills" id="skills">
+            <h3>Skills</h3>
+            <ul>
+              <li>HTML5, CSS3</li>
+              <li>Bootstrap, TailwindCSS, SASS, BEM</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>React</li>
+              <li>Node</li>
+              <li>Express</li>
+              <li>Git, GitHub</li>
+              <li>VS Code</li>
+            </ul>
+          </section>
+          <section class="education" id="education">
+            <h3>Education</h3>
+            <ul>
+              <li>
+                <p>Namangan Agricultural Collegium (2011-2014)</p>
+              </li>
+            </ul>
+          </section>
+          <section class="languages" id="languages">
+            <h3>Languages</h3>
+            <ul>
+                <li>
+                  <p class="language-name">Uzbek</p>
+                  <p>Native</p>
+                </li>
+                <li>
+                  <p class="language-name">English</p>
+                  <p>Advanced</p>
+                </li>
+                <li>
+                  <p class="language-name">Russian</p>
+                  <p>Pre intermediate</p>
+                </li>
+                <li>
+                  <p class="language-name">Polish</p>
+                  <p>Pre intermediate</p>
+                </li>
+            </ul>
+          </section>
+        </main>
+      </div>
+      <!-- right side -->
+      <aside class="right-side">
+        <section class="about-myself" id="about-myself">
+          <div class="sub-header">
+            <img src="./images/icons/myself.svg" alt="About Myself Icon" width="30" height="30" >
+            <h3>About Myself</h3>
+          </div>
+          <p>
+            I'm a full-stack web developer who has been learning web development for 2 years. So far I've worked as the mentor and taught young aspiring developers web development technologies and helped them become developers. I'm very passionate about programming as it puts me in discomfort zone and challenges to push through which in the end helps me grow. Currently, I'm writing blogs on Dev.io to share my knowledge. My goals are building influencial applications that solve the real worl prolbems and make the world better place.
+          </p>
+        </section>
+
+        <section class="courses" id="courses">
+          <div class="sub-header">
+            <img src="./images/icons/courses.svg" alt="Courses" width="30" height="30" >
+            <h3>Courses</h3>
+          </div>
+          <ul>
+            <li>Full-Stack Course on FreeCodeCamp</li>
+            <li>Full-Stack Course on The Odin Project</li>
+            <li>JavaScript by Andrew Mead on Udemy</li>
+            <li>RS Schools Course «JavaScript/Front-end.» (in progress)</li>
+          </ul>
+        </section>
+        <section class="projects" id="projects">
+            <div class="sub-header">
+                <img src="./images/icons/code.svg" alt="Projects" width="30" height="30" >
+                <h3>Projects</h3>
+            </div>
+            <p>Javascript30 - Project Clock</p>
+            <pre>
+              <code>
+      const secondHand = document.querySelector(".second-hand");
+      const minsHand = document.querySelector(".min-hand");
+      const hoursHand = document.querySelector(".hour-hand");
+  
+          function setDate() {
+              const now = new Date();
+  
+              const seconds = now.getSeconds();
+              const secondsDegree = (360 * seconds) / 60 + 90;
+              secondHand.style.transform = `rotate(${secondsDegree}deg)`;
+  
+              const mins = now.getMinutes();
+              const minsDegree = (360 * mins) / 60 + 90;
+              minsHand.style.transform = `rotate(${minsDegree}deg)`;
+  
+              const hours = now.getHours();
+              const hoursDegree = (360 * hours) / 12 + 90;
+              hoursHand.style.transform = `rotate(${hoursDegree}deg)`;
+          }
+  
+      setInterval(setDate, 1000);</code>
+                  </pre>
+        </section>
+      </aside>
+    </div>
+    <!-- footer section -->
+    <footer>
+      <a class="my-github" href="https://github.com/Johongirmirzo" target="_blank">
+        <img class="github-icon" src="./images/icons/github.svg" alt="Github Icon" width="26" height="26" >
+        <p>Visit my GitHub</p>
+      </a>
+      <p>© 2022</p>
+      <a href="https://rs.school/js-en/">
+        <img src="./images/icons/rsschool.svg" alt="Rsschool Icon" width="73" height="26" >
+      </a>
+    </footer>
+  </div>
+</body>
+</html>

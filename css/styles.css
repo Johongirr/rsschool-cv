@@ -227,3 +227,7 @@
   .nav-list a {
     color: #ffffff;
   }
+
+  .projects li {
+    margin-bottom: 20px;
+  }

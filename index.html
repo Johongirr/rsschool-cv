@@ -108,7 +108,6 @@
             I'm a full-stack web developer who has been learning web development for 2 years. So far I've worked as the mentor and taught young aspiring developers web development technologies and helped them become developers. I'm very passionate about programming as it puts me in discomfort zone and challenges to push through which in the end helps me grow. Currently, I'm writing blogs on Dev.io to share my knowledge. My goals are building influencial applications that solve the real worl prolbems and make the world better place.
           </p>
         </section>
-
         <section class="courses" id="courses">
           <div class="sub-header">
             <img src="./images/icons/courses.svg" alt="Courses" width="30" height="30" >
@@ -119,6 +118,81 @@
             <li>Full-Stack Course on The Odin Project</li>
             <li>JavaScript by Andrew Mead on Udemy</li>
             <li>RS Schools Course «JavaScript/Front-end.» (in progress)</li>
+          </ul>
+        </section>
+        <section class="code-example" id="code-example">
+          <div class="sub-header">
+            <img src="./images/icons/code.svg" alt="Code" width="30" height="30" >
+            <h3>Code Examples</h3>
+          </div>
+          <details>
+            <summary>JavaScript Register User Handler</summary>
+            <pre>
+              <code>
+registerUser: async (req: Request, res: Response, next: NextFunction) =&gt; {
+  try {
+      const {username, email, password} = req.body;
+          
+      const user = await User.findOne({$and: [{username}, {email}]});
+      if(user){
+        return  res.send(["Username already exists", "Email already exists"])
+      }
+      const userDuplicate = await User.findOne({username});
+      if(userDuplicate){
+            eturn res.send(["Username already exists"])
+      }
+      const emailDuplicate = await User.findOne({email});
+      if(emailDuplicate){
+          return res.send(["Email already exists"])
+      }
+          
+      const hashedPassword = await bcrypt.hash(password, 10);
+      await User.create({
+          username,
+          email,
+          password: hashedPassword
+      })
+      res.status(201).json({message: "User is successfully created"})
+  }catch(err){
+      return next(err)
+  }},
+              </code>
+            </pre>
+          </details>
+        </section>
+        <section class="projects" id="projects">
+          <div class="sub-header">
+            <img src="./images/icons/code.svg" alt="Code" width="30" height="30" >
+            <h3>Projects</h3>
+          </div>
+          <ul>
+            <li>
+              <h4>
+                Daily Sleep Tracker
+              </h4>
+              <p>Daily Sleep Tracker app for tracking your sleep patterns</p>
+              <a href="https://github.com/Johongirmirzo/dst-ui" target="_blank">Source Code</a>
+              |
+              <a href="https://daily-sleep-tracker.netlify.app/" target="_blank">Live</a>
+            </li>
+            <li>
+              <h4>
+                In-Browser Markdown Editor
+              </h4>
+              <p>Your own markdown editor where you can save, edit, delete and read markdowns</p>
+              <a href="https://github.com/Johongirmirzo/markdown-ui" target="_blank">Source Code</a>
+              |
+              <a href="https://markdowwn.netlify.app/"  target="_blank">Live</a>
+            </li>
+            <li>
+              <h4>
+                Kanban Task Management App
+              </h4>
+              <p>Kanban Task Management App that let's you track your tasks</p>
+              <a href="https://github.com/Johongirmirzo/kanban-ui" target="_blank">Source Code</a>
+              |
+              <a href="https://kanban-task-managementt.netlify.app/" target="_blank">Live</a>
+            </li>
           </ul>
         </section>
       </aside>
